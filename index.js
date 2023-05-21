@@ -5,7 +5,7 @@ const mongoose = require(`./dbconnection/dbconnection`)
 const product = require('./apis/product-api')
 const cart = require('./apis/cart-api')
 const app = express()
-const port = process.env.port || 8000
+const port = process.env.port || 5000
 app.use(express.json())
 app.use(cors({ origin: true, credentials: true }))
 app.use(`/product`, product)

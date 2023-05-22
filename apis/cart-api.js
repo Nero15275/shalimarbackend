@@ -28,5 +28,20 @@ router.delete('/delete/:id', async (req, res) => {
         res.status(400).send(err)
     })
 })
+router.put(`update/:id`, async (req, res) => {
+
+
+    try {
+        const updateCartItem = await cartModel.findByIdAndUpdate(req.params.id, {
+            $set: req.body,
+
+        }, { upsert: true, new: true }
+        )
+
+        res.status(200).json(updateCartItem)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+})
 
 module.exports = router

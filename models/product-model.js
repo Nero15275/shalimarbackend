@@ -12,9 +12,18 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    discount: {
+        type: Number,
+        required: true
+    },
     description: {
         type: String,
         required: true
+    },
+    hasOffer: {
+        type: Boolean,
+        default: false,
+
     },
     img: {
         type: String,
